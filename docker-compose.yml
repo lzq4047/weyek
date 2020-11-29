@@ -1,0 +1,44 @@
+version: '3'
+services:
+  # FE
+  nginx-proxy:
+    image: nginx-proxy
+    ports:
+      - 8080:80
+  nginx-www:
+    image: nginx-www
+    ports:
+      - 18429:80
+  nginx-heart:
+    image: nginx-heart
+    ports:
+      - 18430:80
+  nginx-trace:
+    image: nginx-trace
+    ports:
+      - 18431:80
+  nginx-gallery:
+    image: nginx-gallery
+    ports:
+      - 18432:80
+  nginx-resume:
+    image: nginx-resume
+    ports:
+      - 18433:80
+  nginx-blog:
+    image: nginx-blog
+    ports:
+      - 18434:80
+
+  # BE
+
+  # Service
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+  redis:
+    image: redis
