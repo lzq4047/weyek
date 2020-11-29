@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /home/weyek/docker/data/nginx-proxy/nginx.conf:/etc/nginx/nginx.conf
+      - confg/nginx/proxy.nginx.conf:/etc/nginx/nginx.conf
   nginx-www:
     image: nginx-www
     ports:
